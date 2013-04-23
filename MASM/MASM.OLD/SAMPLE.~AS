@@ -1,0 +1,23 @@
+include io.h
+data segment
+     msg DB 'Eneter numbers'
+     num1 DB 8 DUP(?)
+     num2 DB 8 DUP(?)
+     num3 DB 8 DUP(?)
+data ENDS
+code segment
+     assume cs:code,ds:data
+start:mov ax ,segdata
+      mov ds,ax
+      output msg
+      input num1,8
+      atoi num1
+      mov bx,ax
+      input num2,8
+      atoi num2
+      add ax,bx
+      itoa num3,ax
+      output num3
+code ends
+end start
+

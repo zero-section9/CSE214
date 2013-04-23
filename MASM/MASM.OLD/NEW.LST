@@ -1,0 +1,35 @@
+Microsoft (R) Macro Assembler Version 5.00                  1/24/2                                                             Page     1-1
+
+
+				 
+				 
+ 0000				   code segment 
+				        assume cs:code 
+ 0000  B8 0008			        mov ax,08 
+ 0003  05 0008			        add ax,08 
+ 0006				   code ends 
+				        end  
+Microsoft (R) Macro Assembler Version 5.00                  1/24/2                                                             Symbols-1
+
+
+Segments and Groups:
+
+                N a m e         	Length	 Align	Combine Class
+
+CODE . . . . . . . . . . . . . .  	0006	PARA	NONE	
+
+Symbols:            
+
+                N a m e         	Type	 Value	 Attr
+
+@FILENAME  . . . . . . . . . . .  	TEXT  new		
+
+
+      8 Source  Lines
+      8 Total   Lines
+      3 Symbols
+
+  51234 + 351294 Bytes symbol space free
+
+      0 Warning Errors
+      0 Severe  Errors

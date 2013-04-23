@@ -1,0 +1,12 @@
+code segment
+assume cs:code
+     mov cx,[2000]
+     mov ax ,[2002]
+     mov bx,2004H
+     dec cx
+     cmp ax,[bx]
+     mov ax,[bx]
+     add bx,02H
+     mov [3000],ax
+code ends
+     end

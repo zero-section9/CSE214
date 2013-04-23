@@ -1,0 +1,21 @@
+
+
+Warning: no stack segment
+
+ Start  Stop   Length Name                   Class
+ 00000H 00025H 00026H DATA                   
+ 00030H 0009BH 0006CH CODE                   
+
+Program entry point at 0003:0000
+
+Unresolved externals:
+
+
+ITOA_PROC in file(s): 
+ SAMPLE.OBJ(sample.asm)
+DIS_PROC in file(s): 
+ SAMPLE.OBJ(sample.asm)
+IN_PROC in file(s): 
+ SAMPLE.OBJ(sample.asm)
+ATOI_PROC in file(s): 
+ SAMPLE.OBJ(sample.asm)

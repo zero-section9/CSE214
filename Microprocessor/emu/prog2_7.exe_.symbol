@@ -1,0 +1,20 @@
+< THE SYMBOL TABLE >  prog2_7.exe_  --  emu8086 assembler version: 4.08 
+===================================================================================================
+Name                     	Offset    	Size      	Type      	Segment   
+===================================================================================================
+STACK                    	00000     	-5        	SEGMENT   	(ITSELF)  
+DATA                     	00004     	-5        	SEGMENT   	(ITSELF)  
+N                        	00000     	1         	VAR       	data      
+ARR                      	00001     	1         	VAR       	data      
+ASCENDING                	0000A     	1         	VAR       	data      
+DESCENDING               	0010A     	1         	VAR       	data      
+CODE                     	00025     	-5        	SEGMENT   	(ITSELF)  
+START                    	00000     	-1        	LABEL     	code      
+CPY                      	00011     	-1        	LABEL     	code      
+LOPI                     	00027     	-1        	LABEL     	code      
+LOPJ                     	0002B     	-1        	LABEL     	code      
+LOPJB                    	00037     	-1        	LABEL     	code      
+===================================================================================================
+[ 3/12/2013  --  2:55:31 PM ] 
+< END >
+ 

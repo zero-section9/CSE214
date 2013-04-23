@@ -1,0 +1,83 @@
+EMU8086 GENERATED LISTING. MACHINE CODE <- SOURCE.
+ 
+prog2_9ii.exe_ -- emu8086 assembler version: 4.08  
+ 
+[ 3/12/2013  --  4:03:29 PM ] 
+ 
+===================================================================================================
+[LINE]     LOC: MACHINE CODE                          SOURCE
+===================================================================================================
+ 
+[   1]        :                                       .model small
+[   2]        :                                       .stack 64
+[   3]        :                                       .data
+[   4]    0040: 11 11 10 11 00 01 10 01               bin db 11h,11h,10h,11h,00h,01h,10h,01h
+[   5]    0048: 00 00                                 hexn dw ?
+[   6]        :                                       .code
+[   7]    0050: B8 04 00                              start:mov ax,@data
+[   8]    0053: 8E D8                                 mov ds,ax
+[   9]    0055: BE 00 00                              lea si,bin
+[  10]    0058: 33 C0                                 xor ax,ax
+[  11]    005A: B9 08 00                              mov cx,0008h
+[  12]    005D: 8A 3C                                 cnvrt:mov bh,[si]
+[  13]    005F: B3 01                                 mov bl,01h
+[  14]    0061: 22 DF                                 and bl,bh
+[  15]    0063: 02 C3                                 add al,bl
+[  16]    0065: D1 C8                                 ror ax,01h
+[  17]    0067: 80 E7 10                              and bh,10h
+[  18]    006A: 74 03                                 jz l1
+[  19]    006C: 05 01 00                              add ax,01h
+[  20]    006F: D1 C8                                 l1:ror ax,01h
+[  21]    0071: 46                                    inc si
+[  22]    0072: E2 E9                                 loop cnvrt
+[  23]    0074: A3 08 00                              mov hexn,ax
+[  24]    0077: B4 4C                                 mov ah,4ch
+[  25]    0079: CD 21                                 int 21h
+[  26]        :                                       end start
+[  27]        :                                       .end
+[  28]        :                                       
+ 
+===================================================================================================
+ 
+EXE HEADER - bytes from 0000 to 01FF inclusive.
+
+0000: 4D      -   exe signature (M)
+0001: 5A      -   exe signature (Z)
+0002: 7B      -   bytes on last page (l.byte)
+0003: 00      -   bytes on last page (h.byte)
+0004: 02      -   512 byte pages in file (l.byte)
+0005: 00      -   512 byte pages in file (h.byte)
+0006: 01      -   relocations (l.byte)
+0007: 00      -   relocations (h.byte)
+0008: 20      -   paragraphs in header (l.byte)
+0009: 00      -   paragraphs in header (h.byte)
+000A: 00      -   minimum memory (l.byte)
+000B: 00      -   minimum memory (h.byte)
+000C: FF      -   maximum memory (l.byte)
+000D: FF      -   maximum memory (h.byte)
+000E: 00      -   SS - stack segment (l.byte)
+000F: 00      -   SS - stack segment (h.byte)
+0010: 40      -   SP - stack pointer (l.byte)
+0011: 00      -   SP - stack pointer (h.byte)
+0012: BD      -   check sum (l.byte)
+0013: 85      -   check sum (h.byte)
+0014: 00      -   IP - instruction pointer (l.byte)
+0015: 00      -   IP - instruction pointer (h.byte)
+0016: 05      -   CS - code segment (l.byte)
+0017: 00      -   CS - code segment (h.byte)
+0018: 1E      -   relocation table adress (l.byte)
+0019: 00      -   relocation table adress (h.byte)
+001A: 00      -   overlay number (l.byte)
+001B: 00      -   overlay number (h.byte)
+001C: 01      -   signature (l.byte)
+001D: 00      -   signature (h.byte)
+001E: 01      -   relocation table - offset inside segment (l.byte)
+001F: 00      -   relocation table - offset inside segment (h.byte)
+0020: 05      -   relocation table - segment anchor (l.byte)
+0021: 00      -   relocation table - segment anchor (h.byte)
+0022 to 01FF  -   reserved relocation area  (00) 
+
+
+
+
+===================================================================================================

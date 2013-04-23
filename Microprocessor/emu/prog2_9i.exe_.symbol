@@ -1,0 +1,17 @@
+< THE SYMBOL TABLE >  prog2_9i.exe_  --  emu8086 assembler version: 4.08 
+===================================================================================================
+Name                     	Offset    	Size      	Type      	Segment   
+===================================================================================================
+STACK                    	00000     	-5        	SEGMENT   	(ITSELF)  
+DATA                     	00004     	-5        	SEGMENT   	(ITSELF)  
+HEXN                     	00000     	2         	VAR       	data      
+BIN                      	00002     	1         	VAR       	data      
+CODE                     	00005     	-5        	SEGMENT   	(ITSELF)  
+START                    	00000     	-1        	LABEL     	code      
+CNVRT                    	0000E     	-1        	LABEL     	code      
+S1                       	00016     	-1        	LABEL     	code      
+S2                       	0001D     	-1        	LABEL     	code      
+===================================================================================================
+[ 3/12/2013  --  3:28:45 PM ] 
+< END >
+ 

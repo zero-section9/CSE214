@@ -1,0 +1,17 @@
+< THE SYMBOL TABLE >  even_odd.bin_  --  emu8086 assembler version: 4.08 
+===================================================================================================
+Name                     	Offset    	Size      	Type      	Segment   
+===================================================================================================
+S_DCL_LOC1TMP            	0000B     	1         	VAR       	(NOSEG)   
+SKIP_DCL_LOC1TMP         	00010     	-1        	LABEL     	(NOSEG)   
+NEXT_CHAR_LOC1TMP        	00013     	-1        	LABEL     	(NOSEG)   
+PRINTED_LOC1TMP          	00021     	-1        	LABEL     	(NOSEG)   
+ODD                      	00024     	-1        	LABEL     	(NOSEG)   
+S_DCL_LOC2TMP            	00028     	1         	VAR       	(NOSEG)   
+SKIP_DCL_LOC2TMP         	0002C     	-1        	LABEL     	(NOSEG)   
+NEXT_CHAR_LOC2TMP        	0002F     	-1        	LABEL     	(NOSEG)   
+PRINTED_LOC2TMP          	0003D     	-1        	LABEL     	(NOSEG)   
+===================================================================================================
+[ 1/29/2013  --  3:06:34 PM ] 
+< END >
+ 

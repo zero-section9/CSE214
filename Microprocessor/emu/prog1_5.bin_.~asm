@@ -1,0 +1,15 @@
+mov ax,1200h
+mov si,ax
+mov cx,0003h
+mov ax,2200h
+mov di,ax
+lop:mov ax,[si]
+mov [di],ax
+add si,02h
+add di,02h
+loop lop
+hlt
+
+
+
+; [SOURCE]: Z:\Microprocessor\prog1_5.asm

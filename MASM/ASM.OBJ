@@ -1,0 +1,49 @@
+Microsoft (R) Macro Assembler Version 5.00                  1/12/10 12:32:56
+                                                             Page     1-1
+
+
+       1				.model small 
+       2 0040				.stack 64 
+       3 0000				.data 
+       4 0000				.code 
+       5 0000  B8 ---- R		start: mov ax,@data 
+       6 0003  8E D8			        mov ds,ax 
+       7 0005  B8 2001			        mov ax,2001h 
+       8 0008  BB 2002			        mov bx,2002h 
+       9 000B  03 C3			        add ax,bx 
+      10 000D  BE 2000			        mov si,2000h 
+      11 0010  89 04			        mov [si],ax 
+      12 0012				        end start 
+Microsoft (R) Macro Assembler Version 5.00                  1/12/10 12:32:56
+                                                             Symbols-1
+
+
+Segments and Groups:
+
+                N a m e         	Length	 Align	Combine Class
+
+DGROUP . . . . . . . . . . . . .  	GROUP
+  _DATA  . . . . . . . . . . . .  	0000	WORD	PUBLIC	'DATA'
+  STACK  . . . . . . . . . . . .  	0040	PARA	STACK	'STACK'
+_TEXT  . . . . . . . . . . . . .  	0012	WORD	PUBLIC	'CODE'
+
+Symbols:            
+
+                N a m e         	Type	 Value	 Attr
+
+START  . . . . . . . . . . . . .  	L NEAR	0000	_TEXT
+
+@CODE  . . . . . . . . . . . . .  	TEXT  _TEXT		
+@CODESIZE  . . . . . . . . . . .  	TEXT  0		
+@DATASIZE  . . . . . . . . . . .  	TEXT  0		
+@FILENAME  . . . . . . . . . . .  	TEXT  add		
+
+
+     12 Source  Lines
+     12 Total   Lines
+     15 Symbols
+
+  49502 + 451426 Bytes symbol space free
+
+      0 Warning Errors
+      0 Severe  Errors

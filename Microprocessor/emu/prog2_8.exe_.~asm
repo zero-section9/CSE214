@@ -1,0 +1,28 @@
+.model small
+.stack 64
+.data
+num db 0FH
+arr dw 0000H, 0001H
+.code
+start:MOV AX, @data
+MOV DS, AX
+LEA SI, arr
+XOR CX, CX
+MOV CL, num
+MOV DI, SI
+ADD DI, 02h
+MOV AX, 0001H
+LOP:ADD AX, [SI]
+MOV [DI], AX
+ADD SI, 02h
+ADD DI, 02h
+LOOP LOP
+MOV AH, 4CH
+INT 21H
+end start
+.end
+
+
+
+
+; [SOURCE]: Z:\Microprocessor\prog2_8.asm

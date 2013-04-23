@@ -1,0 +1,137 @@
+EMU8086 GENERATED LISTING. MACHINE CODE <- SOURCE.
+ 
+prog2_7.exe_ -- emu8086 assembler version: 4.08  
+ 
+[ 3/12/2013  --  2:55:31 PM ] 
+ 
+===================================================================================================
+[LINE]     LOC: MACHINE CODE                          SOURCE
+===================================================================================================
+ 
+[   1]        :                                       .model small
+[   2]        :                                       .stack 64
+[   3]        :                                       .data
+[   4]    0040: 09                                    n db 09h
+[   5]    0041: 0A 0F 0D 10 02 00 09 FF 18            arr db 0AH,0FH,0DH,10H,02H,00H,09H,0FFH,18H
+[   6]    004A: 00 00 00 00 00 00 00 00 00 00 00 00   ascending db 100h dup(?)
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00                         
+[   7]    014A: 00 00 00 00 00 00 00 00 00 00 00 00   descending db 100h dup(?)
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00                         
+[   8]        :                                       .code
+[   9]    0250: B8 04 00                              start:mov ax,@data
+[  10]    0253: 8E D8                                 mov ds,ax
+[  11]    0255: 33 C9                                 xor cx,cx
+[  12]    0257: 8A 0E 00 00                           mov cl,n
+[  13]    025B: BE 01 00                              lea si,arr
+[  14]    025E: BF 0A 00                              lea di,ascending
+[  15]    0261: 8A 04                                 cpy:mov al,[si]
+[  16]    0263: 88 05                                 mov [di],al
+[  17]    0265: 46                                    inc si
+[  18]    0266: 47                                    inc di
+[  19]    0267: E2 F8                                 loop cpy
+[  20]    0269: 33 D2                                 xor dx,dx
+[  21]    026B: 8A 0E 00 00                           mov cl,n
+[  22]    026F: FE C9                                 dec cl
+[  23]    0271: BB 0A 00                              lea bx,ascending
+[  24]    0274: BE 01 00                              mov si,0001h
+[  25]    0277: 8A 00                                 lopi:mov al,[bx+si]
+[  26]    0279: 8B FE                                 mov di,si
+[  27]    027B: 8A 61 FF                              lopj:mov ah,[bx+di-1]
+[  28]    027E: 3A E0                                 cmp ah,al
+[  29]    0280: 72 05                                 jc lopjb
+[  30]    0282: 88 21                                 mov [bx+di],ah
+[  31]    0284: 4F                                    dec di
+[  32]    0285: 75 F4                                 jnz lopj
+[  33]    0287: 88 01                                 lopjb:mov [bx+di],al
+[  34]    0289: 46                                    inc si
+[  35]    028A: E2 EB                                 loop lopi
+[  36]    028C: B4 4C                                 mov ah,4ch
+[  37]    028E: CD 21                                 int 21h
+[  38]        :                                       end start
+[  39]        :                                       .end
+[  40]        :                                       
+ 
+===================================================================================================
+ 
+EXE HEADER - bytes from 0000 to 01FF inclusive.
+
+0000: 4D      -   exe signature (M)
+0001: 5A      -   exe signature (Z)
+0002: 90      -   bytes on last page (l.byte)
+0003: 00      -   bytes on last page (h.byte)
+0004: 03      -   512 byte pages in file (l.byte)
+0005: 00      -   512 byte pages in file (h.byte)
+0006: 01      -   relocations (l.byte)
+0007: 00      -   relocations (h.byte)
+0008: 20      -   paragraphs in header (l.byte)
+0009: 00      -   paragraphs in header (h.byte)
+000A: 00      -   minimum memory (l.byte)
+000B: 00      -   minimum memory (h.byte)
+000C: FF      -   maximum memory (l.byte)
+000D: FF      -   maximum memory (h.byte)
+000E: 00      -   SS - stack segment (l.byte)
+000F: 00      -   SS - stack segment (h.byte)
+0010: 40      -   SP - stack pointer (l.byte)
+0011: 00      -   SP - stack pointer (h.byte)
+0012: 94      -   check sum (l.byte)
+0013: CA      -   check sum (h.byte)
+0014: 00      -   IP - instruction pointer (l.byte)
+0015: 00      -   IP - instruction pointer (h.byte)
+0016: 25      -   CS - code segment (l.byte)
+0017: 00      -   CS - code segment (h.byte)
+0018: 1E      -   relocation table adress (l.byte)
+0019: 00      -   relocation table adress (h.byte)
+001A: 00      -   overlay number (l.byte)
+001B: 00      -   overlay number (h.byte)
+001C: 01      -   signature (l.byte)
+001D: 00      -   signature (h.byte)
+001E: 01      -   relocation table - offset inside segment (l.byte)
+001F: 00      -   relocation table - offset inside segment (h.byte)
+0020: 25      -   relocation table - segment anchor (l.byte)
+0021: 00      -   relocation table - segment anchor (h.byte)
+0022 to 01FF  -   reserved relocation area  (00) 
+
+
+
+
+===================================================================================================

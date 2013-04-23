@@ -1,0 +1,67 @@
+Microsoft (R) Macro Assembler Version 5.00                  2/19/10 18:17:26
+                                                             Page     1-1
+
+
+				.model small 
+				.stake 64 
+parity.asm(2): error A2105: Expected: instruction or directive
+ 0000				.data 
+ 0000  48			opr     db 48h 
+ 0001  00			res  db 00h 
+ 0000				.code 
+				assume cs:codesegment ds:datasegment 
+parity.asm(7): error A2009: Symbol not defined: CODESEGMENT
+ 1000				org 1000h 
+ 1000  B8 ---- R		start:  mov ax,@data 
+parity.asm(9): error A2024: Segment parameters are changed
+ 1003  8A C0			        mov al,ax 
+parity.asm(10): warning A4031: Operand types must match
+ 1005  B0 00			        mov al,00h 
+ 1007  7A 05			        jp par 
+ 1009  B0 01			        mov al,01h 
+ 100B  E9 0000 U		        jmp next 
+parity.asm(14): error A2009: Symbol not defined: NEXT
+ 100E				        par: 
+parity.asm(15): error A2024: Segment parameters are changed
+ 100E  A2 0001 R		        mov res,al 
+ 1011  F4			        hlt 
+ 1012				        end start 
+Microsoft (R) Macro Assembler Version 5.00                  2/19/10 18:17:26
+                                                             Symbols-1
+
+
+Segments and Groups:
+
+                N a m e         	Length	 Align	Combine Class
+
+CODESEGMENT  . . . . . . . . . .  	0000	FAR	Segments and Groups:	
+DGROUP . . . . . . . . . . . . .  	GROUP
+  _DATA  . . . . . . . . . . . .  	0002	WORD	PUBLIC	'DATA'
+_TEXT  . . . . . . . . . . . . .  	1012	WORD	PUBLIC	'CODE'
+
+Symbols:            
+
+                N a m e         	Type	 Value	 Attr
+
+OPR  . . . . . . . . . . . . . .  	L BYTE	0000	_DATA
+
+PAR  . . . . . . . . . . . . . .  	L NEAR	100E	_TEXT
+
+RES  . . . . . . . . . . . . . .  	L BYTE	0001	_DATA
+
+START  . . . . . . . . . . . . .  	L NEAR	1000	_TEXT
+
+@CODE  . . . . . . . . . . . . .  	TEXT  _TEXT		
+@CODESIZE  . . . . . . . . . . .  	TEXT  0		
+@DATASIZE  . . . . . . . . . . .  	TEXT  0		
+@FILENAME  . . . . . . . . . . .  	TEXT  parity		
+
+
+     18 Source  Lines
+     18 Total   Lines
+     18 Symbols
+
+  50078 + 450898 Bytes symbol space free
+
+      1 Warning Errors
+      5 Severe  Errors

@@ -1,0 +1,81 @@
+EMU8086 GENERATED LISTING. MACHINE CODE <- SOURCE.
+ 
+prog1_4.exe_ -- emu8086 assembler version: 4.08  
+ 
+[ 2/12/2013  --  4:12:33 PM ] 
+ 
+===================================================================================================
+[LINE]     LOC: MACHINE CODE                          SOURCE
+===================================================================================================
+ 
+[   1]        :                                       .model small
+[   2]        :                                       .stack 64
+[   3]        :                                       .data
+[   4]    0040: 1E 00                                 num dw 001eh
+[   5]    0042: 00 00                                 factl dw ?
+[   6]    0044: 00 00                                 facth dw ?
+[   7]        :                                       .code
+[   8]    0050: B8 04 00                              start:mov ax,@data
+[   9]    0053: 8E D8                                 mov ds,ax
+[  10]    0055: B8 01 00                              mov ax,0001h
+[  11]    0058: 33 D2                                 xor dx,dx
+[  12]    005A: 8B 0E 00 00                           mov cx,num
+[  13]    005E: 8B D8                                 lop:mov bx,ax
+[  14]    0060: 8B C2                                 mov ax,dx
+[  15]    0062: F7 E1                                 mul cx
+[  16]    0064: 93                                    xchg ax,bx
+[  17]    0065: F7 E1                                 mul cx
+[  18]    0067: 03 D3                                 add dx,bx
+[  19]    0069: E2 F3                                 loop lop
+[  20]    006B: A3 02 00                              mov factl,ax
+[  21]    006E: 89 16 04 00                           mov facth,dx
+[  22]    0072: B4 4C                                 mov ah,4ch
+[  23]    0074: CD 21                                 int 21h
+[  24]        :                                       end start
+[  25]        :                                       .end;21*20*19*18*17*16*15*14*13*12*11*10*9*8*7*6*5*4*3*2
+[  26]        :                                       
+ 
+===================================================================================================
+ 
+EXE HEADER - bytes from 0000 to 01FF inclusive.
+
+0000: 4D      -   exe signature (M)
+0001: 5A      -   exe signature (Z)
+0002: 76      -   bytes on last page (l.byte)
+0003: 00      -   bytes on last page (h.byte)
+0004: 02      -   512 byte pages in file (l.byte)
+0005: 00      -   512 byte pages in file (h.byte)
+0006: 01      -   relocations (l.byte)
+0007: 00      -   relocations (h.byte)
+0008: 20      -   paragraphs in header (l.byte)
+0009: 00      -   paragraphs in header (h.byte)
+000A: 00      -   minimum memory (l.byte)
+000B: 00      -   minimum memory (h.byte)
+000C: FF      -   maximum memory (l.byte)
+000D: FF      -   maximum memory (h.byte)
+000E: 00      -   SS - stack segment (l.byte)
+000F: 00      -   SS - stack segment (h.byte)
+0010: 40      -   SP - stack pointer (l.byte)
+0011: 00      -   SP - stack pointer (h.byte)
+0012: 6C      -   check sum (l.byte)
+0013: 69      -   check sum (h.byte)
+0014: 00      -   IP - instruction pointer (l.byte)
+0015: 00      -   IP - instruction pointer (h.byte)
+0016: 05      -   CS - code segment (l.byte)
+0017: 00      -   CS - code segment (h.byte)
+0018: 1E      -   relocation table adress (l.byte)
+0019: 00      -   relocation table adress (h.byte)
+001A: 00      -   overlay number (l.byte)
+001B: 00      -   overlay number (h.byte)
+001C: 01      -   signature (l.byte)
+001D: 00      -   signature (h.byte)
+001E: 01      -   relocation table - offset inside segment (l.byte)
+001F: 00      -   relocation table - offset inside segment (h.byte)
+0020: 05      -   relocation table - segment anchor (l.byte)
+0021: 00      -   relocation table - segment anchor (h.byte)
+0022 to 01FF  -   reserved relocation area  (00) 
+
+
+
+
+===================================================================================================

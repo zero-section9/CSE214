@@ -1,0 +1,16 @@
+< THE SYMBOL TABLE >  prog1_4.exe_  --  emu8086 assembler version: 4.08 
+===================================================================================================
+Name                     	Offset    	Size      	Type      	Segment   
+===================================================================================================
+STACK                    	00000     	-5        	SEGMENT   	(ITSELF)  
+DATA                     	00004     	-5        	SEGMENT   	(ITSELF)  
+NUM                      	00000     	2         	VAR       	data      
+FACTL                    	00002     	2         	VAR       	data      
+FACTH                    	00004     	2         	VAR       	data      
+CODE                     	00005     	-5        	SEGMENT   	(ITSELF)  
+START                    	00000     	-1        	LABEL     	code      
+LOP                      	0000E     	-1        	LABEL     	code      
+===================================================================================================
+[ 2/12/2013  --  4:12:33 PM ] 
+< END >
+ 

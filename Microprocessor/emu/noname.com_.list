@@ -1,0 +1,31 @@
+EMU8086 GENERATED LISTING. MACHINE CODE <- SOURCE.
+ 
+noname.com_ -- emu8086 assembler version: 4.08  
+ 
+[ 1/29/2013  --  3:08:47 PM ] 
+ 
+===================================================================================================
+[LINE]     LOC: MACHINE CODE                          SOURCE
+===================================================================================================
+ 
+[   1]        :                                       ORG 100h
+[   2]        :                                       ; The sub-function that we are using
+[   3]        :                                       ; does not modify the AH register on
+[   4]        :                                       ; return, so we may set it only once.
+[   5]    0100: B4 0E                                 MOV AH, 0Eh ; select sub-function.
+[   6]        :                                       ; INT 10h / 0Eh sub-function
+[   7]        :                                       ; receives an ASCII code of the
+[   8]        :                                       ; character that will be printed
+[   9]        :                                       ; in AL register.
+[  10]    0102: B0 48                                 MOV AL, 'H' ; ASCII code: 72
+[  11]    0104: CD 10                                 INT 10h ; print it!
+[  12]    0106: C3                                    RET
+[  13]        :                                       
+ 
+===================================================================================================
+ 
+
+
+
+
+===================================================================================================
